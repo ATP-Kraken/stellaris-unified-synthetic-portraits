@@ -1,5 +1,203 @@
 portraits = {
-	synthetic_robot_01 = {	entity = "portrait_synthetic_female_01_entity"	clothes_selector = "no_texture" hair_selector "no_texture"	greeting_sound = "event_swarm"
+	anthrobot1 = {	entity = "portrait_anthrobot_00_entity" clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "robot_arthropoid_greetings" 
+		character_textures = { 
+			"gfx/models/portraits/divsynths/divsynths_anthrobot_body_01.dds" 
+		}
+	}
+	anthdroid1 = {	entity = "portrait_arthropoid_11_entity" clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "robot_arthropoid_greetings" 
+		character_textures = { 
+			"gfx/models/portraits/divsynths/divsynths_anthroid_body_01.dds" 
+			"gfx/models/portraits/divsynths/divsynths_anthroid_body_02.dds" 
+			"gfx/models/portraits/divsynths/divsynths_anthroid_body_03.dds" 
+			"gfx/models/portraits/divsynths/divsynths_anthroid_body_04.dds" 
+			"gfx/models/portraits/divsynths/divsynths_anthroid_body_05.dds" 
+			"gfx/models/portraits/divsynths/divsynths_anthroid_body_06.dds" 
+		}
+	}
+	whiterobot1 = {	entity = "portrait_divsynth_00_entity" clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "robot_human_greetings"
+		character_textures = { 
+			"gfx/models/portraits/divsynths/robot_white_ascended.dds" 
+		}
+	}
+	robot2 = {	entity = "portrait_divsynth_00_entity" clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "robot_human_greetings"
+		character_textures = { 
+			"gfx/models/portraits/divsynths/divsynths_male_body_01.dds" 
+			"gfx/models/portraits/divsynths/divsynths_male_body_02.dds" 
+			"gfx/models/portraits/divsynths/divsynths_male_body_03.dds" 
+			"gfx/models/portraits/divsynths/divsynths_male_body_04.dds" 
+			"gfx/models/portraits/divsynths/divsynths_male_body_05.dds" 
+			"gfx/models/portraits/divsynths/divsynths_male_body_06.dds" 
+		}
+	}
+	robot3 = {	entity = "portrait_divsynth_01_entity"	clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "robot_human_greetings"
+		character_textures = { 
+			"gfx/models/portraits/divsynths/divsynths_male_body_10.dds" 
+		}
+	}
+	ai1 = {	entity = "portrait_divsynth_02_entity"	clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "robot_human_greetings"
+		character_textures = { 
+			"gfx/models/portraits/divsynths/divsynths_male_body_20.dds" 
+		}
+	}
+	ai4 = {	entity = "portrait_divsynth_00_entity" clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "robot_human_greetings"
+		character_textures = { 
+			"gfx/models/portraits/divsynths/divsynths_male_body_01.dds" 
+			"gfx/models/portraits/divsynths/divsynths_male_body_02.dds" 
+			"gfx/models/portraits/divsynths/divsynths_male_body_03.dds" 
+			"gfx/models/portraits/divsynths/divsynths_male_body_04.dds" 
+			"gfx/models/portraits/divsynths/divsynths_male_body_05.dds" 
+			"gfx/models/portraits/divsynths/divsynths_male_body_06.dds" 
+		}
+	}
+	ai5 = {	entity = "portrait_divsynth_01_entity"	clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "robot_human_greetings"
+		character_textures = { 
+			"gfx/models/portraits/divsynths/divsynths_male_body_10.dds" 
+		}
+	}
+	ai6 = {	entity = "portrait_divsynth_02_entity"	clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "robot_human_greetings"
+		character_textures = { 
+			"gfx/models/portraits/divsynths/divsynths_male_body_20.dds" 
+		}
+	}
+
+                     ##############################################################################
+
+	synthmale_hum = {	entity = "portrait_divsynth_male_01_entity"	clothes_selector = "divsynths_male_clothes_01" hair_selector = "divsynths_male_01_hair" greeting_sound = "robot_human_greetings"
+		character_textures = { 
+			"gfx/models/portraits/divsynths/divsynths_male_body_10.dds" 
+		}
+	}
+	synthfemale_hum = {	entity = "portrait_divsynth_female_01_entity"	clothes_selector = "divsynths_female_clothes_01" hair_selector = "divsynths_female_01_hair" greeting_sound = "robot_human_greetings"
+		character_textures = { 
+			"gfx/models/portraits/divsynths/divsynths_female_body_10.dds" 
+		}
+	}
+
+
+		########  MAMMAL SYNTHS #######
+	synthmale_mam14 = {	entity = "portrait_synth_mammalian_male_14_entity" clothes_selector = "divsynths_mamm_male_clothes_01" hair_selector = "no_texture" greeting_sound = "robot_mammalian_greetings"
+			character_textures = {
+					"gfx/models/portraits/divsynths/divsynths_male_body_mam14.dds" 
+				}
+	}
+	synthfemale_mam14 = {	entity = "portrait_synth_mammalian_female_14_entity" clothes_selector = "divsynths_mamm_female_clothes_01" hair_selector = "no_texture" greeting_sound = "robot_mammalian_greetings"
+			character_textures = {
+					"gfx/models/portraits/divsynths/divsynths_female_body_mam14.dds" 
+				}
+	}
+
+
+		########  REPTILIAN SYNTHS ####### 
+
+	synthmale_rep4 = {	entity = "portrait_synth_reptilian_male04_entity"	clothes_selector = "no_texture"	hair_selector = "no_texture" 
+		greeting_sound = "robot_reptilian_greetings"
+		character_textures = { 
+					"gfx/models/portraits/divsynths/divsynths_male_body_rept04.dds" 
+					"gfx/models/portraits/divsynths/divsynths_male_body_rept05.dds" 
+					"gfx/models/portraits/divsynths/divsynths_male_body_rept06.dds" 
+					"gfx/models/portraits/divsynths/divsynths_male_body_rept07.dds" 
+		}
+	}
+	synthfemale_rep4 = {	entity = "portrait_synth_reptilian_female04_entity"	clothes_selector = "no_texture"	hair_selector = "no_texture" 
+		greeting_sound = "robot_reptilian_greetings"
+		character_textures = { 
+					"gfx/models/portraits/divsynths/divsynths_female_body_rept04.dds" 
+					"gfx/models/portraits/divsynths/divsynths_female_body_rept05.dds" 
+					"gfx/models/portraits/divsynths/divsynths_female_body_rept06.dds" 
+					"gfx/models/portraits/divsynths/divsynths_female_body_rept07.dds" 
+		}
+	}
+
+		########  AVIAN SYNTHS ####### 
+
+	aviansynth = {	entity = "portrait_avian_11_entity"	clothes_selector = "no_texture"	hair_selector = "no_texture"	greeting_sound = "robot_avian_greetings"
+			character_textures = {
+					"gfx/models/portraits/divsynths/divsynths_female_body_avi10.dds"
+					"gfx/models/portraits/divsynths/divsynths_male_body_avi11.dds"
+					"gfx/models/portraits/divsynths/divsynths_male_body_avi12.dds"
+					"gfx/models/portraits/divsynths/divsynths_male_body_avi13.dds"
+					"gfx/models/portraits/divsynths/divsynths_male_body_avi14.dds"
+					"gfx/models/portraits/divsynths/divsynths_male_body_avi15.dds"
+				}
+	}
+	
+	
+		########  ARTHROPOID SYNTHS ####### 
+	synthmale_art6 = {	entity = "portrait_synth_arthropoid_male06_entity" clothes_selector = "no_texture"	hair_selector = "no_texture"	greeting_sound = "robot_arthropoid_greetings"
+			character_textures = {
+					"gfx/models/portraits/divsynths/divsynths_male_body_arth06.dds"
+			}
+	}
+	synthfemale_art6 = {	entity = "portrait_synth_arthropoid_female06_entity" clothes_selector = "no_texture"	hair_selector = "no_texture"	greeting_sound = "robot_arthropoid_greetings"
+			character_textures = {
+					"gfx/models/portraits/divsynths/divsynths_female_body_arth06.dds"
+			}
+	}
+		########  MOLLUSCOID SYNTHS ####### 
+	synth_mol12 = {	entity = "portrait_synth_molluscoid12_entity" clothes_selector = "divsynths_moll_clothes_01"	hair_selector = "no_texture"	greeting_sound = "robot_molluscoid_greetings"
+			character_textures = {
+					"gfx/models/portraits/divsynths/divsynths_body_mol12.dds"
+					"gfx/models/portraits/divsynths/divsynths_body_mol13.dds"
+					"gfx/models/portraits/divsynths/divsynths_body_mol14.dds"
+			}
+	}
+		########  FUNGOID SYNTHS ####### 
+	synth_fun8 = {	entity = "portrait_synth_fungoid08_entity"	clothes_selector = "no_texture"	hair_selector = "no_texture"	greeting_sound = "robot_fungoid_greetings"
+			character_textures = {
+					"gfx/models/portraits/divsynths/divsynths_body_fun08.dds"
+					"gfx/models/portraits/divsynths/divsynths_body_fun09.dds"
+					"gfx/models/portraits/divsynths/divsynths_body_fun10.dds"
+			}
+	}
+		########  PLANTOID SYNTHS ####### 
+	synth_pla7 = {	entity = "portrait_synth_plantoid07_entity" clothes_selector = "plantoid_normal_clothes_01" hair_selector = "no_texture"	greeting_sound = "robot_plantoid_greetings"
+			character_textures = {
+					"gfx/models/portraits/divsynths/divsynths_body_pla07.dds"
+					"gfx/models/portraits/divsynths/divsynths_body_pla08.dds"
+					"gfx/models/portraits/divsynths/divsynths_body_pla09.dds"		
+			}
+	}
+		########  HOLOFRIXIGRAM SYNTHS ####### 
+	holofrixit_gram_03 = {	entity = "portrait_holofrixit_drone_01_entity" clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "robot_molluscoid_greetings"
+		character_textures = { 
+			"gfx/models/portraits/holofrixit/holofrixit_gram_body_03.dds" 
+		}
+	}	
+		########  ZERIPHEN SYNTHS ####### 
+	zeriphen_female_01 = {	entity = "portrait_zeriphen_female_01_entity"	clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "robot_avian_greetings"
+		character_textures = { 
+			"gfx/models/portraits/zeriphen/zeriphen_female_a_body_01.dds" 
+			"gfx/models/portraits/zeriphen/zeriphen_female_a_body_02.dds" 
+			"gfx/models/portraits/zeriphen/zeriphen_female_a_body_03.dds" 
+		}
+	}
+	zeriphen_male_01 = {	entity = "portrait_zeriphen_male_01_entity"	clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "robot_avian_greetings"
+		character_textures = { 
+			"gfx/models/portraits/zeriphen/zeriphen_male_a_body_01.dds" 
+			"gfx/models/portraits/zeriphen/zeriphen_male_a_body_02.dds" 
+			"gfx/models/portraits/zeriphen/zeriphen_male_a_body_03.dds" 
+		}
+	}
+		########  TERMINATOR SYNTHS ####### 
+	syntherminator_male_01 = {	entity = "portrait_synth_terminator_male_entity"	clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "robot_human_greetings"
+		character_textures = { 
+			"gfx/models/portraits/divsynths/terminator_male_body_01.dds"
+			"gfx/models/portraits/divsynths/terminator_male_body_02.dds"
+			"gfx/models/portraits/divsynths/terminator_male_body_03.dds"
+			"gfx/models/portraits/divsynths/terminator_male_body_04.dds"
+		}
+	}
+	syntherminator_female_01 = {	entity = "portrait_synth_terminator_female_entity"	clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "robot_human_greetings"
+		character_textures = { 
+			"gfx/models/portraits/divsynths/terminator_female_body_01.dds"
+			"gfx/models/portraits/divsynths/terminator_female_body_02.dds"
+			"gfx/models/portraits/divsynths/terminator_female_body_03.dds"
+			"gfx/models/portraits/divsynths/terminator_female_body_04.dds"
+		}
+	}
+	########  NSABO/DOGKISSER SYNTHS ####### 
+	########  CUELAN SYNTH ####### 
+	synthetic_robot_01 = {	entity = "portrait_synthetic_female_01_entity"	clothes_selector = "no_texture" hair_selector "no_texture"	greeting_sound = "robot_avian_greetings"
 		character_textures = { 
 			"gfx/models/portraits/synthetic/synthetic_01_a.dds" 
 			"gfx/models/portraits/synthetic/synthetic_01_b.dds" 
@@ -8,7 +206,8 @@ portraits = {
 			"gfx/models/portraits/synthetic/synthetic_01_e.dds" 
 		}
 	}	
-	synthetic_robot_02 = {	entity = "portrait_synthetic_02_entity" 		clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "event_swarm" 
+	########  LARGE DRONE ####### 
+	synthetic_robot_02 = {	entity = "portrait_synthetic_02_entity" 		clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "robot_plantoid_greetings" 
 		character_textures = {
 			"gfx/models/portraits/synthetic/synthetic_02_a.dds" 
 			"gfx/models/portraits/synthetic/synthetic_02_b.dds" 
@@ -17,7 +216,8 @@ portraits = {
 			"gfx/models/portraits/synthetic/synthetic_02_e.dds" 			
 		}		
 	}
-	synthetic_robot_03 = {	entity = "portrait_synthetic_03_entity" 		clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "event_swarm" 
+	########  BUBBLEBOT ####### 
+	synthetic_robot_03 = {	entity = "portrait_synthetic_03_entity" 		clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "robot_molluscoid_greetings" 
 		character_textures = {
 			"gfx/models/portraits/synthetic/synthetic_03_a.dds" 
 			"gfx/models/portraits/synthetic/synthetic_03_b.dds" 	
@@ -26,7 +226,8 @@ portraits = {
 			"gfx/models/portraits/synthetic/synthetic_03_e.dds" 				
 		}		
 	}
-	synthetic_robot_04 = {	entity = "portrait_synthetic_04_entity" 		clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "event_swarm" 
+	########  CONSTRUCTOR BOT ####### 
+	synthetic_robot_04 = {	entity = "portrait_synthetic_04_entity" 		clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "robot_reptilian_greetings" 
 		character_textures = {
 			"gfx/models/portraits/synthetic/synthetic_04_a.dds" 
 			"gfx/models/portraits/synthetic/synthetic_04_b.dds" 
@@ -35,7 +236,8 @@ portraits = {
 			"gfx/models/portraits/synthetic/synthetic_04_e.dds" 			
 		}		
 	}
-	synthetic_robot_05 = {	entity = "portrait_synthetic_05_entity" 		clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "event_swarm" 
+	########  SMALL DRONE ####### 
+	synthetic_robot_05 = {	entity = "portrait_synthetic_05_entity" 		clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "robot_fungoid_greetings" 
 		character_textures = {
 			"gfx/models/portraits/synthetic/synthetic_05_a.dds"
 			"gfx/models/portraits/synthetic/synthetic_05_b.dds" 
@@ -44,7 +246,8 @@ portraits = {
 			"gfx/models/portraits/synthetic/synthetic_05_e.dds"  			
 		}		
 	}
-	synthetic_robot_06 = {	entity = "portrait_synthetic_06_entity" 		clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "event_swarm" 
+	########  MILITARY COCKROACH BOT ####### 
+	synthetic_robot_06 = {	entity = "portrait_synthetic_06_entity" 		clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "robot_arthropoid_greetings" 
 		character_textures = {
 			"gfx/models/portraits/synthetic/synthetic_06_a.dds" 	
 			"gfx/models/portraits/synthetic/synthetic_06_b.dds" 	
@@ -53,7 +256,8 @@ portraits = {
 			"gfx/models/portraits/synthetic/synthetic_06_e.dds" 			
 		}		
 	}
-	synthetic_robot_07 = {	entity = "portrait_synthetic_07_entity" 		clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "event_swarm" 
+	########  LONG ROBOT ####### 
+	synthetic_robot_07 = {	entity = "portrait_synthetic_07_entity" 		clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "robot_arthropoid_greetings" 
 		character_textures = {
 			"gfx/models/portraits/synthetic/synthetic_07_a.dds" 	
 			"gfx/models/portraits/synthetic/synthetic_07_b.dds" 	
@@ -62,7 +266,8 @@ portraits = {
 			"gfx/models/portraits/synthetic/synthetic_07_e.dds" 			
 		}		
 	}
-	synthetic_robot_08 = {	entity = "portrait_synthetic_08_entity" 		clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "event_swarm" 
+	########  CAMERA ROBOT ####### 
+	synthetic_robot_08 = {	entity = "portrait_synthetic_08_entity" 		clothes_selector = "no_texture" hair_selector = "no_texture" greeting_sound = "robot_reptilian_greetings" 
 		character_textures = {
 			"gfx/models/portraits/synthetic/synthetic_08_a.dds" 	
 			"gfx/models/portraits/synthetic/synthetic_08_b.dds" 	
@@ -74,172 +279,956 @@ portraits = {
 }
 
 portrait_groups = {
-
-	synthetic_robot_01 = {
-		default = synthetic_robot_01
+	humansynth = {
+		default = synthmale_hum 
 		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
 			add = {
+				trigger = {
+					ruler = { gender = male }
+				}
 				portraits = {
-					synthetic_robot_01
+					synthmale_hum 
 				}
 			}
-		}
+			add = {
+				trigger = {
+					ruler = { gender = female }
+				}
+				portraits = {
+					synthfemale_hum 
+				}
+			}
 
-		#leader scope 
-		ruler = {
-				add = {
-				portraits = {
-					synthetic_robot_01
-				}
-			}
+		}		
 		
-		}
-	}
-	
-	synthetic_robot_02 = {
-		default = synthetic_robot_02
-		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+		#species scope
+		species = { #generic portrait for a species
 			add = {
 				portraits = {
-					synthetic_robot_02
+					synthmale_hum 
+					synthfemale_hum 
 				}
 			}
-		}
-
-		#leader scope 
-		ruler = {
-				add = {
-				portraits = {
-					synthetic_robot_02
-				}
-			}
+		}		
 		
-		}
-	}
-	
-	synthetic_robot_03 = {
-		default = synthetic_robot_03
-		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+		#pop scope
+		pop = { #for a specific pop
 			add = {
 				portraits = {
-					synthetic_robot_03
+					synthmale_hum 
+					synthfemale_hum 
 				}
 			}
 		}
-
-		#leader scope 
-		ruler = {
-				add = {
-				portraits = {
-					synthetic_robot_03
-				}
-			}
 		
-		}
-	}
-	
-	synthetic_robot_04 = {
-		default = synthetic_robot_04
-		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
 			add = {
+				trigger = {
+					gender = female
+				}
 				portraits = {
-					synthetic_robot_04
+					synthfemale_hum 
 				}
 			}
-		}
-
-		#leader scope 
-		ruler = {
-				add = {
-				portraits = {
-					synthetic_robot_04
-				}
-			}
-		
-		}
-	}
-	
-	synthetic_robot_05 = {
-		default = synthetic_robot_05
-		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
 			add = {
+				trigger = {
+					gender = male
+				}
 				portraits = {
-					synthetic_robot_05
+					synthmale_hum 
 				}
 			}
 		}
 
+			
 		#leader scope 
 		ruler = {
-				add = {
+			add = {
+				trigger = {
+					gender = female
+				}
 				portraits = {
-					synthetic_robot_05
+					synthfemale_hum 
 				}
 			}
-		
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					synthmale_hum 
+				}
+			}
 		}
 	}
 
-	synthetic_robot_06 = {
-		default = synthetic_robot_06
+		########  MAMMAL SYNTHS #######
+	mammaliansynth = {
+		default = synthmale_mam14
 		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
 			add = {
+				trigger = {
+					ruler = { gender = male }
+				}
 				portraits = {
-					synthetic_robot_06
+					synthmale_mam14 
+				}
+			}
+			add = {
+				trigger = {
+					ruler = { gender = female }
+				}
+				portraits = {
+					synthfemale_mam14
+				}
+			}
+
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					synthmale_mam14
+					synthfemale_mam14
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					synthmale_mam14
+					synthfemale_mam14
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					synthfemale_mam14
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					synthmale_mam14
 				}
 			}
 		}
 
+			
 		#leader scope 
 		ruler = {
-				add = {
+			add = {
+				trigger = {
+					gender = female
+				}
 				portraits = {
-					synthetic_robot_06
+					synthfemale_mam14
 				}
 			}
-		
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					synthmale_mam14
+				}
+			}
 		}
 	}
-	
-	synthetic_robot_07 = {
-		default = synthetic_robot_07
+
+		########  REPTILIAN SYNTHS ####### 
+	reptiliansynth = {
+		default = synthmale_rep4
 		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
 			add = {
+				trigger = {
+					ruler = { gender = male }
+				}
 				portraits = {
-					synthetic_robot_07
+					synthmale_rep4
+				}
+			}
+			add = {
+				trigger = {
+					ruler = { gender = female }
+				}
+				portraits = {
+					synthfemale_rep4
+				}
+			}
+
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					synthmale_rep4
+					synthfemale_rep4
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					synthmale_rep4
+					synthfemale_rep4
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					synthfemale_rep4
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					synthmale_rep4
 				}
 			}
 		}
 
+			
 		#leader scope 
 		ruler = {
-				add = {
+			add = {
+				trigger = {
+					gender = female
+				}
 				portraits = {
-					synthetic_robot_07
+					synthfemale_rep4
 				}
 			}
-		
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					synthmale_rep4
+				}
+			}
 		}
 	}
-	
-	synthetic_robot_08 = {
-		default = synthetic_robot_08
+
+		########  ARTHROPOID SYNTHS ####### 6
+	arthropoidsynth = {
+		default = synthmale_art6
 		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
 			add = {
+				trigger = {
+					ruler = { gender = male }
+				}
 				portraits = {
-					synthetic_robot_08
+					synthmale_art6 
+				}
+			}
+			add = {
+				trigger = {
+					ruler = { gender = female }
+				}
+				portraits = {
+					synthfemale_art6
+				}
+			}
+
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					synthmale_art6
+					synthfemale_art6
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					synthmale_art6
+					synthfemale_art6
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					synthfemale_art6
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					synthmale_art6
 				}
 			}
 		}
 
+			
 		#leader scope 
 		ruler = {
-				add = {
+			add = {
+				trigger = {
+					gender = female
+				}
 				portraits = {
-					synthetic_robot_08
+					synthfemale_art6
 				}
 			}
-		
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					synthmale_art6
+				}
+			}
 		}
 	}
-}
+
+		########  MOLLUSCOID SYNTHS ####### 12
+	molluscoidsynth = {
+		default = synth_mol12
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					synth_mol12
+				}
+			}
+
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					synth_mol12
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					synth_mol12
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				portraits = {
+					synth_mol12
+				}
+			}
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				portraits = {
+					synth_mol12
+				}
+			}
+		}
+	}
+
+		########  FUNGOID SYNTHS ####### 8
+	fungoidsynth = {
+		default = synth_fun8
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					synth_fun8
+				}
+			}
+
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					synth_fun8
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					synth_fun8
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				portraits = {
+					synth_fun8
+				}
+			}
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				portraits = {
+					synth_fun8
+				}
+			}
+		}
+	}
+
+		########  PLANTOID SYNTHS ####### 7
+	plantoidsynth = {
+		default = synth_pla7
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					synth_pla7
+				}
+			}
+
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					synth_pla7
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					synth_pla7
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				portraits = {
+					synth_pla7
+				}
+			}
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				portraits = {
+					synth_pla7
+				}
+			}
+		}
+	}
+		########  ANTHROPOID ROBOT ####### 
+	anthrobot = {
+		default = anthrobot1
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					anthrobot1
+				}
+			}
+
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					anthrobot1
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					anthrobot1
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				portraits = {
+					anthrobot1
+				}
+			}
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				portraits = {
+					anthrobot1
+				}
+			}
+		}
+	}
+		########  ANTHROPOID ANDROID ####### 
+	anthroid = {
+		default = anthdroid1 
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					anthdroid1 
+				}
+			}
+
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					anthdroid1 
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					anthdroid1 
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				portraits = {
+					anthdroid1 
+				}
+			}
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				portraits = {
+					anthdroid1 
+				}
+			}
+		}
+	}
+		########  HUMAN ROBOT #######  Playable
+	humrobot = {
+		default = whiterobot1 
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					whiterobot1 
+				}
+			}
+
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					whiterobot1 
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					whiterobot1 
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				portraits = {
+					whiterobot1 
+				}
+			}
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				portraits = {
+					whiterobot1 
+				}
+			}
+		}
+	}
+		########  HUMAN ANDROID #######  Playable
+	humroid = {
+		default = robot2 
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					robot2 
+				}
+			}
+
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					robot2 
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					robot2 
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				portraits = {
+					robot2 
+				}
+			}
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				portraits = {
+					robot2 
+				}
+			}
+		}
+	}
+		########  SYNTH CONSCIOUSNESS #######  Playable
+	humaicon = {
+		default = ai1 
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					ai1 
+				}
+			}
+
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					ai1 
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					robot2
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				portraits = {
+					ai1 
+				}
+			}
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				portraits = {
+					ai1 
+				}
+			}
+		}
+	}
+		########  HOLOFRIXIGRAM #######  
+	holofrixigram = {
+		default = holofrixit_gram_03 
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					holofrixit_gram_03 
+				}
+			}
+
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					holofrixit_gram_03 
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					holofrixit_gram_03 
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				portraits = {
+					holofrixit_gram_03 
+				}
+			}
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				portraits = {
+					holofrixit_gram_03 
+				}
+			}
+		}
+	}
+		########  ZERIPHEN #######  
+	zeriphensynth = {
+		default = zeriphen_male_01
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				trigger = {
+					ruler = { gender = male }
+				}
+				portraits = {
+					zeriphen_male_01
+				}
+			}
+			add = {
+				trigger = {
+					ruler = { gender = female }
+				}
+				portraits = {
+					zeriphen_female_01
+				}
+			}
+
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					zeriphen_male_01
+					zeriphen_female_01
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					zeriphen_male_01
+					zeriphen_female_01
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					zeriphen_female_01
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					zeriphen_male_01
+				}
+			}
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					zeriphen_female_01
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					zeriphen_male_01
+				}
+			}
+		}
+	}
+	#TERMINATOR SYNTHS
+	syntherminator = {
+		default = syntherminator_male_01 
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				trigger = {
+					ruler = { gender = male }
+				}
+				portraits = {
+					syntherminator_male_01 
+				}
+			}
+			add = {
+				trigger = {
+					ruler = { gender = female }
+				}
+				portraits = {
+					syntherminator_female_01 
+				}
+			}
+
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					syntherminator_male_01 
+					syntherminator_female_01 
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					syntherminator_male_01 
+					syntherminator_female_01 
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					syntherminator_female_01 
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					syntherminator_male_01 
+				}
+			}
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					syntherminator_female_01 
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					syntherminator_male_01 
+				}
+			}
+		}
+	}
+
+
+} #closes portrait groups
