@@ -1,0 +1,4 @@
+extsynths_modifier = {
+		country_robot_maintenance_mult = -0.4
+		country_robot_build_speed_mult = 0.4
+}

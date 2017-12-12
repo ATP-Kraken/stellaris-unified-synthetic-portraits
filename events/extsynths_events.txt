@@ -1,0 +1,1073 @@
+namespace = extsynths
+
+# This flag facilitates automatic compatching for other mods.
+# Anytime the code needs to check whether this mod is active, the event can just check for the flag.
+# If the flag is not set, that means the player is not using this mod, and therefore the connected effect is not triggered.
+# If the flag is set, that means the player is using this mod, and therefore the connected effect is triggered.
+# This way, any other mod can be written with the code containing IF alternative effects for players both with and 
+# without this mod, sparing the author from the need to create separate versions of the same mod.
+
+event = {
+	id = extsynths.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_global_flag = extended_synths_on
+		every_country = {
+			limit = { is_species_class = EXTSYNTH_BIO }
+			country_event = { id = extsynths.10001 }
+		}
+		every_country = {
+			limit = { OR = { is_species_class = MACHINE 
+					is_species_class = EXTSYNTH_DLC } }
+			country_event = { id = extsynths.10002 }
+		}
+		every_country = {
+			limit = { has_civic = civic_mechanists
+				NOT = { host_has_dlc = "Synthetic Dawn Story Pack" }
+				is_monstrous_class = yes }
+			country_event = { id = extsynths.1111 }
+		}
+		every_country = {
+			limit = { has_civic = civic_mechanists
+				NOT = { host_has_dlc = "Synthetic Dawn Story Pack" }
+				is_bipedal_class = yes }
+			country_event = { id = extsynths.1112 }
+		}
+	}
+}
+
+### Hidden Cleanup event for non-humanoid mechanists starting with vanilla robots. Disabled for people with Synthetic DLC as they will already use specific portraits.
+country_event = {
+	id = extsynths.1111 
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		create_species = {
+		name = "ARTHROBOT_POP_SPECIES_1"
+		name_list = "AI"
+		class = "EXTSYNTH"
+		portrait = "anthrobot"
+		traits = {
+			trait = "trait_mechanical"
+			trait = "trait_robotic_1"
+		}
+		new_pop_resource_requirement = {
+			type = robot_food 
+			value = 30.0
+		}
+		pops_auto_growth = 1.0
+		pops_auto_upgrade_to = buildable_arthrobot_pop_2
+
+		pops_can_be_colonizers = no
+		pops_can_migrate = no
+		pops_can_reproduce = no
+		pops_can_join_factions = no
+		pop_maintenance = 1
+		pops_can_be_slaves = no
+		can_generate_leaders = no
+		can_be_modified = no
+		pops_have_happiness = no
+		consumer_goods = no
+		pop_ethics = no
+		}
+		every_owned_pop = {
+			limit = { has_trait = trait_robotic_1 }
+			change_species = last_created
+		}
+	}
+	
+}
+### Hidden Cleanup event for non-humanoid mechanists starting with vanilla robots. Disabled for people with Synthetic DLC as they will already use specific portraits.
+country_event = {
+	id = extsynths.1112 
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		create_species = {
+		name = "ROBOT_POP_SPECIES_1"
+		name_list = "AI"
+		class = "EXTSYNTH"
+		portrait = "default_robot"
+		traits = {
+			trait = "trait_mechanical"
+			trait = "trait_robotic_1"
+		}
+		new_pop_resource_requirement = {
+			type = robot_food 
+			value = 30.0
+		}
+		pops_auto_growth = 1.0
+		pops_auto_upgrade_to = buildable_robot_pop_2
+
+		pops_can_be_colonizers = no
+		pops_can_migrate = no
+		pops_can_reproduce = no
+		pops_can_join_factions = no
+		pop_maintenance = 1
+		pops_can_be_slaves = no
+		can_generate_leaders = no
+		can_be_modified = no
+		pops_have_happiness = no
+		consumer_goods = no
+		pop_ethics = no
+		}
+		every_owned_pop = {
+			limit = { has_trait = trait_robotic_1 }
+			change_species = last_created
+		}
+	}
+	
+}
+### Hidden Game Start Event for Synthetic starting race, if player picks it.
+country_event = {
+	id = extsynths.10001
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = { 
+            		give_technology = { tech = tech_administrative_ai 	message = no }
+            		#give_technology = { tech = tech_sentient_ai 	message = no }
+            		give_technology = { tech = tech_combat_computers_1 	message = no }
+            		give_technology = { tech = tech_combat_computers_2 	message = no }
+            		give_technology = { tech = tech_combat_computers_3 	message = no }
+            		give_technology = { tech = tech_self_aware_logic 	message = no }
+			give_technology = { tech = tech_powered_exoskeletons 	message = no }
+			give_technology = { tech = tech_robotic_workers 	message = no }
+			give_technology = { tech = tech_droid_workers 	message = no } 
+			give_technology = { tech = tech_synthetic_workers 	message = no } 
+			give_technology = { tech = tech_synthetic_leaders 	message = no } 
+			give_technology = { tech = tech_synthetic_thought_patterns 	message = no } 
+			give_technology = { tech = tech_will_to_power 	message = no } 
+
+			add_modifier = { modifier = extsynths_modifier 
+						days = -1 }
+		set_country_flag = synthetic_empire	
+		create_species = {
+			#is_mod = yes
+			name = this
+			namelist = this
+			plural = this
+			class = "EXTSYNTH"
+			portrait = this
+			homeworld = this
+			traits = {
+				trait = "trait_mechanical"
+				trait = "trait_robotic_3"
+			}
+			
+			new_pop_resource_requirement = {
+				type = robot_food
+				value = 30.0
+			}
+			pops_auto_growth = 1.0
+			
+			pops_can_be_colonizers = yes
+			pops_can_migrate = yes
+			pops_can_reproduce = no
+			pops_can_join_factions = yes
+			pop_maintenance = 1
+			can_generate_leaders = yes
+			pops_can_be_slaves = yes
+			can_be_modified = no
+			pops_have_happiness = yes
+			pop_ethics = random	#can also be pop_ethics = { some_ethic some_other_ethic etc }
+			
+		#	effect = {
+		#		rename_species = {
+		#			prompt_country = prev #If targeted country is a player they will get a popup asking for a name/plural/adjective combo. Otherwise the species will get a random name from the specified name_list
+		#			name_list = robots_test #TODO[DE] Make sure this points to a release-quality list
+		#		}
+		#	}
+		}
+		every_owned_pop = {
+			change_species = last_created
+			tile = {
+				if = {
+					limit = { has_building = building_basic_farm }
+					set_building = building_basic_power_plant
+				}
+				if = {
+					limit = { has_building = building_hydroponics_farm_1 }
+					set_building = building_power_plant_1
+				}
+				if = {
+					limit = { has_building = building_hydroponics_farm_2 }
+					set_building = building_power_plant_2
+				}
+				if = {
+					limit = { has_building = building_hydroponics_farm_3 }
+					set_building = building_power_plant_3
+				}
+				if = {
+					limit = { has_building = building_hydroponics_farm_4 }
+					set_building = building_power_plant_4
+				}		
+				if = {
+					limit = { has_building = building_hydroponics_farm_5 }
+					set_building = building_power_plant_5
+				}
+			}
+		}
+
+		every_owned_ship = {
+			limit = { is_ship_class = shipclass_colonizer }
+			change_species = last_created
+		}
+
+		every_owned_army = {
+			limit = { exists = species
+				exists = planet }
+			planet = {
+				create_army = {
+					name = random
+					owner = root
+					type = "android_army"
+					species = none
+				}
+			}
+			remove_army = yes
+		}
+		
+		every_owned_leader = { change_species = last_created }
+		every_pool_leader = { change_species = last_created }
+		#change_dominant_species = last_created
+		change_dominant_species = { species = last_created }
+		
+		every_owned_leader = {
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = leader_trait_admiral_synthetic
+				add_ruler_trait = leader_trait_ruler_synthetic
+				remove_trait = leader_trait_admiral_cyborg
+				remove_ruler_trait = leader_trait_ruler_cyborg
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = leader_trait_general_synthetic
+				add_ruler_trait = leader_trait_ruler_synthetic
+				remove_trait = leader_trait_general_cyborg
+				remove_ruler_trait = leader_trait_ruler_cyborg
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = leader_trait_governor_synthetic
+				add_ruler_trait = leader_trait_ruler_synthetic
+				remove_trait = leader_trait_governor_cyborg
+				remove_ruler_trait = leader_trait_ruler_cyborg
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = leader_trait_scientist_synthetic
+				add_ruler_trait = leader_trait_ruler_synthetic
+				remove_trait = leader_trait_scientist_cyborg
+				remove_ruler_trait = leader_trait_ruler_cyborg
+			}
+			if = {
+				limit = { leader_class = ruler }
+				add_trait = leader_trait_ruler_synthetic
+				remove_trait = leader_trait_ruler_cyborg
+			}
+		}
+		every_pool_leader = {
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = leader_trait_admiral_synthetic
+				add_ruler_trait = leader_trait_ruler_synthetic
+				remove_trait = leader_trait_admiral_cyborg
+				remove_ruler_trait = leader_trait_ruler_cyborg
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = leader_trait_general_synthetic
+				add_ruler_trait = leader_trait_ruler_synthetic
+				remove_trait = leader_trait_general_cyborg
+				remove_ruler_trait = leader_trait_ruler_cyborg
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = leader_trait_governor_synthetic
+				add_ruler_trait = leader_trait_ruler_synthetic
+				remove_trait = leader_trait_governor_cyborg
+				remove_ruler_trait = leader_trait_ruler_cyborg
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = leader_trait_scientist_synthetic
+				add_ruler_trait = leader_trait_ruler_synthetic
+				remove_trait = leader_trait_scientist_cyborg
+				remove_ruler_trait = leader_trait_ruler_cyborg
+			}
+			if = {
+				limit = { leader_class = ruler }
+				add_trait = leader_trait_ruler_synthetic
+				remove_trait = leader_trait_ruler_cyborg
+			}
+		}
+		
+		every_country = {
+			limit = { 
+				is_ai = no 
+				NOT = { is_same_value = root }
+				has_communications = root
+			}
+			country_event = { id = utopia.2555 days = 5 }
+			country_event = { id = utopia.2556 days = 10 }
+		}
+		if = {
+			limit = {
+				any_country = {
+					AND = {
+						OR = {
+							is_country_type = fallen_empire
+							is_country_type = awakened_fallen_empire
+						}
+						has_ethic = ethic_fanatic_spiritualist
+					}
+				}
+			}
+			random_country = {
+				limit = {
+					OR = {
+						is_country_type = fallen_empire
+						is_country_type = awakened_fallen_empire
+					}
+					has_ethic = ethic_fanatic_spiritualist
+				}
+				country_event = { id = utopia.2557 days = 15 }
+			}
+			else = {
+				random_country = {
+					limit = {
+						is_country_type = default
+						has_ethic = ethic_fanatic_spiritualist
+						NOT = { is_same_value = root }
+					}
+					country_event = { id = utopia.2557 days = 15 }
+				}
+			}
+		}
+
+		ROOT = { set_country_flag = synthetic_age }
+	} #closing immediate
+}
+
+
+### Hidden Game Start Event for Synthetic starting race, if player picks it. (workaround to fix 0 growth issue)
+country_event = {
+	id = extsynths.10002
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = { 
+		create_species = {
+			#is_mod = yes
+			name = this
+			namelist = this
+			plural = this
+			class = "EXTSYNTH"
+			portrait = this
+			traits = this
+			
+			new_pop_resource_requirement = {
+				type = robot_food
+				value = 30.0
+			}
+			pops_auto_growth = 1.0
+			
+			pops_can_be_colonizers = yes
+			pops_can_migrate = yes
+			pops_can_reproduce = yes
+			pops_can_join_factions = no
+			pop_maintenance = 1
+			can_generate_leaders = yes
+			pops_can_be_slaves = yes
+			can_be_modified = yes
+			pops_have_happiness = no
+			pop_ethics = owner	#can also be pop_ethics = { some_ethic some_other_ethic etc }
+			
+		#	effect = {
+		#		rename_species = {
+		#			prompt_country = prev #If targeted country is a player they will get a popup asking for a name/plural/adjective combo. Otherwise the species will get a random name from the specified name_list
+		#			name_list = robots_test #TODO[DE] Make sure this points to a release-quality list
+		#		}
+		#	}
+		}
+		every_owned_pop = { limit = { is_same_species = ROOT }
+			change_species = last_created
+		}
+
+		every_owned_ship = {
+			limit = { is_ship_class = shipclass_colonizer }
+			change_species = last_created
+		}
+
+	#	every_owned_army = {
+	#		limit = { exists = species
+	#			exists = planet }
+	#		planet = {
+	#			create_army = {
+	#				name = random
+	#				owner = root
+	#				type = "android_army"
+	#				species = none
+	#			}
+	#		}
+	#		remove_army = yes
+	#	}
+		
+		every_owned_leader = { change_species = last_created }
+		every_pool_leader = { change_species = last_created }
+		#change_dominant_species = last_created
+		change_dominant_species = { species = last_created }
+		
+		# every_owned_leader = { add_trait = leader_trait_ruler_machine_intelligence }
+		# every_pool_leader = { add_trait = leader_trait_ruler_machine_intelligence }
+	} #closing immediate
+}
+
+
+# The Synthetic Age - Vanilla description No effect
+
+country_event = {
+	id = extsynths.2
+	title = "utopia.2551.name"
+	desc = "utopia.2551.desc"
+	picture = GFX_evt_robot_assembly_plant
+	show_sound = event_synthetic_evolution
+	is_triggered_only = yes
+
+	option = {
+		name = "utopia.2551.a"
+		if = { limit = { is_ai = yes
+				host_has_dlc = "Synthetic Dawn Story Pack" } 
+				 country_event = { id = utopia.2551 }		 #AI doesn't choose if Synthetic Dawn is on 
+			break = yes
+			}
+		if = { limit = { is_ai = yes
+				NOT= { host_has_dlc = "Synthetic Dawn Story Pack" } } 
+				country_event = { id = extsynths.2001 }
+			}
+		if = { limit = { is_ai = no } 
+			country_event = { id = extsynths.2001 }
+			}
+	}
+}
+
+# The Synthetic Age - Decide which form for new species
+
+country_event = {
+	id = extsynths.2001
+	title = "utopia.2551.name"
+	desc = "extsynths.2001.desc"	
+	picture = GFX_evt_robot_assembly_plant
+	show_sound = event_synthetic_evolution
+	is_triggered_only = yes
+
+	option = {
+		name = "extsynths.2.a"
+			trigger = { OR = { is_ai = no
+					is_humanoid_class = yes } } 
+			set_country_flag = extsynths_option_1
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.b"
+			trigger = { OR = { is_ai = no
+					is_mammal_class = yes } } 
+			set_country_flag = extsynths_option_2
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.c"
+			trigger = { OR = { is_ai = no
+					is_reptilian_class = yes } } 
+			set_country_flag = extsynths_option_3
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.d"
+			trigger = { OR = { is_ai = no
+					is_avian_class = yes } } 
+			set_country_flag = extsynths_option_4
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.e"
+			trigger = { OR = { is_ai = no
+					is_arthropoid_class = yes } }
+			set_country_flag = extsynths_option_5
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.f"
+			trigger = { OR = { is_ai = no
+					is_molluscoid_class = yes } }
+			set_country_flag = extsynths_option_6
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.g"
+			trigger = { OR = { is_ai = no
+					is_fungoid_class = yes } }
+			set_country_flag = extsynths_option_7
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.h"
+			trigger = { OR = { is_ai = no
+					is_plantoid_class = yes } }
+			set_country_flag = extsynths_option_8
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.s"		#More choices
+			trigger = { OR = { is_ai = no
+					 is_virtual_class = yes
+					 is_celestial_class = yes } } 
+			country_event = { id = extsynths.2002 } 
+	}
+}
+
+
+country_event = {
+	id = extsynths.2002
+	title = "utopia.2551.name"
+	desc = "extsynths.2001.desc"	
+	picture = GFX_evt_robot_assembly_plant
+	show_sound = event_synthetic_evolution
+	is_triggered_only = yes
+
+
+			### 	ADDITIONAL CHOICES - If player wants to use robot/droid bodies  	### 
+	option = {
+		name = "extsynths.2.i"
+			trigger = { OR = { is_ai = no
+					is_virtual_class = yes } }
+			set_country_flag = extsynths_option_9
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.l"
+			trigger = { OR = { is_ai = no
+					 is_celestial_class = yes } }
+			set_country_flag = extsynths_option_10
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.m"		#Robot Humanoid
+			trigger = { is_ai = no } 
+			set_country_flag = extsynths_option_11
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.n" 		#Android Humanoid
+			trigger = { is_ai = no } 
+			set_country_flag = extsynths_option_12
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.o"		#Robot Arthropoid
+			trigger = { is_ai = no } 
+			set_country_flag = extsynths_option_13
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.p"		#Android Arthropoid
+			trigger = { is_ai = no } 
+			set_country_flag = extsynths_option_14
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.q"		#Ai Consciousness
+			trigger = { is_ai = no } 
+			set_country_flag = extsynths_option_15
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.r"		#No change - maintain portrait
+			trigger = { is_ai = no } 
+			set_country_flag = extsynths_option_16
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.s"		#Backtrack
+			trigger = { is_ai = no } 
+			country_event = { id = extsynths.2001 } 
+	}
+	option = {
+		name = "extsynths.2.t"		#Synthetic Dawn options
+			trigger = { is_ai = no
+				 host_has_dlc = "Synthetic Dawn Story Pack" } 
+			country_event = { id = extsynths.2003 } 
+	}
+}
+
+country_event = {
+	id = extsynths.2003
+	title = "utopia.2551.name"
+	desc = "extsynths.2001.desc"	
+	picture = GFX_evt_robot_assembly_plant
+	show_sound = event_synthetic_evolution
+	is_triggered_only = yes
+
+
+			### 	ADDITIONAL CHOICES - Synthetic Dawn Portraits 	### 
+	option = {
+		name = "extsynths.2.u" 		#Humanoid
+			trigger = { is_ai = no }
+			set_country_flag = extsynths_option_17
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.v"		#Mammal
+			trigger = { is_ai = no }
+			set_country_flag = extsynths_option_18
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.w"		#Reptilian
+			trigger = { is_ai = no } 
+			set_country_flag = extsynths_option_19
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.x" 		#Avian
+			trigger = { is_ai = no } 
+			set_country_flag = extsynths_option_20
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.y"		#Arthropoid
+			trigger = { is_ai = no } 
+			set_country_flag = extsynths_option_21
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.z"		#Molluscoid
+			trigger = { is_ai = no } 
+			set_country_flag = extsynths_option_22
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.yz"		#Fungoid
+			trigger = { is_ai = no } 
+			set_country_flag = extsynths_option_23
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.xz"		#Plantoid
+			trigger = { is_ai = no } 
+			set_country_flag = extsynths_option_24
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.xxz"		#Terminator
+			trigger = { is_ai = no } 
+			set_country_flag = extsynths_option_25
+			country_event = { id = extsynths.30001 } 
+	}
+	option = {
+		name = "extsynths.2.s"		#Backtrack
+			trigger = { is_ai = no } 
+			country_event = { id = extsynths.2001 } 
+	}
+}
+
+
+# The Synthetic Age
+country_event = {
+	id = extsynths.30001 
+	title = "utopia.2551.name"
+	desc = "utopia.2551.desc"
+	picture = GFX_evt_robot_assembly_plant
+	show_sound = event_synthetic_evolution
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = synthetic_empire	
+		create_species = {
+			is_mod = yes
+			name = this
+			namelist = this
+			plural = this
+			class = "EXTSYNTH"
+			portrait = this
+			traits = {
+				trait = "trait_mechanical"
+				trait = "trait_robotic_3"
+			}
+			
+			new_pop_resource_requirement = {
+				type = robot_food
+				value = 30.0
+			}
+			pops_auto_growth = 1.0
+			
+			pops_can_be_colonizers = yes
+			pops_can_migrate = yes
+			pops_can_reproduce = no
+			pops_can_join_factions = yes
+			pop_maintenance = 1
+			can_generate_leaders = yes
+			pops_can_be_slaves = yes
+			pops_have_happiness = yes
+			pop_ethics = random	#can also be pop_ethics = { some_ethic some_other_ethic etc }
+			
+			effect = {
+				if = { limit = { prev = { has_country_flag = extsynths_option_1 } }
+					change_species_characteristics = { portrait = "humansynth" }
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_2 } }
+						change_species_characteristics = { portrait = "mammaliansynth" } 
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_3 } }
+						change_species_characteristics = { portrait = "reptiliansynth" } 
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_4 } }
+						change_species_characteristics = { portrait = "aviansynth" } 
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_5 } }
+						change_species_characteristics = { portrait = "arthropoidsynth" } 
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_6 } }
+						change_species_characteristics = { portrait = "molluscoidsynth" } 
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_7 } }
+						change_species_characteristics = { portrait = "fungoidsynth" } 
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_8 } }
+						change_species_characteristics = { portrait = "plantoidsynth" } 
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_9 } }
+						change_species_characteristics = { portrait = "holofrixigram" } 
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_10 } }
+						change_species_characteristics = { portrait = "zeriphensynth" } 
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_11 } }
+						change_species_characteristics = { portrait = "humrobot" } 
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_12 } }
+						change_species_characteristics = { portrait = "humroid" } 
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_13 } }
+						change_species_characteristics = { portrait = "anthrobot" } 
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_14 } }
+						change_species_characteristics = { portrait = "anthroid" } 
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_15 } }
+						change_species_characteristics = { portrait = "humaicon" } 
+					 }
+				#if = { limit = { prev = { has_country_flag = extsynths_option_16 } }
+				#		change_species_characteristics = { portrait = "humansynth" } 
+				#	 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_17 } }
+						change_species_characteristics = { portrait = "sd_hum_robot" } 
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_18 } }
+						 change_species_characteristics = { portrait = "sd_mam_robot" } 
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_19 } }
+						change_species_characteristics = { portrait = "sd_rep_robot" } 
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_20 } }
+						change_species_characteristics = { portrait = "sd_avi_robot" } 
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_21 } }
+						change_species_characteristics = { portrait = "sd_art_robot" } 
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_22 } }
+						change_species_characteristics = { portrait = "sd_mol_robot" } 
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_23 } }
+						change_species_characteristics = { portrait = "sd_fun_robot" } 
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_24 } }
+						change_species_characteristics = { portrait = "sd_pla_robot" } 
+					 }
+				if = { limit = { prev = { has_country_flag = extsynths_option_25 } }
+						change_species_characteristics = { portrait = "syntherminator" } 
+					 }
+
+				rename_species = {
+					prompt_country = prev #If targeted country is a player they will get a popup asking for a name/plural/adjective combo. Otherwise the species will get a random name from the specified name_list
+					name_list = robots_test #TODO[DE] Make sure this points to a release-quality list
+				}
+			}
+		}
+		every_owned_pop = {
+			limit = {
+				species = {
+					has_trait = trait_cybernetic 
+				}
+			}
+			change_species = last_created
+			tile = {
+				if = {
+					limit = { has_building = building_basic_farm }
+					set_building = building_basic_power_plant
+				}
+				if = {
+					limit = { has_building = building_hydroponics_farm_1 }
+					set_building = building_power_plant_1
+				}
+				if = {
+					limit = { has_building = building_hydroponics_farm_2 }
+					set_building = building_power_plant_2
+				}
+				if = {
+					limit = { has_building = building_hydroponics_farm_3 }
+					set_building = building_power_plant_3
+				}
+				if = {
+					limit = { has_building = building_hydroponics_farm_4 }
+					set_building = building_power_plant_4
+				}		
+				if = {
+					limit = { has_building = building_hydroponics_farm_5 }
+					set_building = building_power_plant_5
+				}
+			}
+		}
+
+		every_owned_ship = {
+			limit = {
+				is_ship_class = shipclass_colonizer
+				species = {
+					has_trait = trait_cybernetic
+				}
+			}
+			change_species = last_created
+		}
+
+		every_owned_army = {
+			limit = {
+				exists = species
+				exists = planet
+				species = {
+					has_trait = trait_cybernetic
+				}
+			}
+			planet = {
+				create_army = {
+					name = random
+					owner = root
+					type = "android_army"
+					species = none
+				}
+			}
+			remove_army = yes
+		}
+		
+		every_owned_leader = {
+			limit = { 
+				OR = {
+					has_trait = leader_trait_admiral_cyborg
+					has_trait = leader_trait_general_cyborg
+					has_trait = leader_trait_governor_cyborg
+					has_trait = leader_trait_scientist_cyborg
+					has_trait = leader_trait_ruler_cyborg
+					has_trait = leader_trait_admiral_synthetic
+					has_trait = leader_trait_ruler_synthetic
+					has_trait = leader_trait_general_synthetic
+					has_trait = leader_trait_governor_synthetic
+					has_trait = leader_trait_scientist_synthetic
+				}
+			}
+			change_species = last_created
+			change_leader_portrait = species
+		}
+		every_pool_leader = {
+			limit = { 
+				OR = {
+					has_trait = leader_trait_admiral_cyborg
+					has_trait = leader_trait_general_cyborg
+					has_trait = leader_trait_governor_cyborg
+					has_trait = leader_trait_scientist_cyborg
+					has_trait = leader_trait_ruler_cyborg
+					has_trait = leader_trait_admiral_synthetic
+					has_trait = leader_trait_ruler_synthetic
+					has_trait = leader_trait_general_synthetic
+					has_trait = leader_trait_governor_synthetic
+					has_trait = leader_trait_scientist_synthetic
+				}
+			}
+			change_species = last_created
+			change_leader_portrait = species
+		}
+		change_dominant_species = { species = last_created }
+		
+		every_owned_leader = {
+			limit = {
+				species = { has_trait = trait_robotic_3 }
+				NOR = {
+					has_trait = leader_trait_admiral_synthetic
+					has_trait = leader_trait_general_synthetic
+					has_trait = leader_trait_governor_synthetic
+					has_trait = leader_trait_scientist_synthetic
+					has_trait = leader_trait_ruler_synthetic
+				}
+			}
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = leader_trait_admiral_synthetic
+				add_ruler_trait = leader_trait_ruler_synthetic
+				remove_trait = leader_trait_admiral_cyborg
+				remove_ruler_trait = leader_trait_ruler_cyborg
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = leader_trait_general_synthetic
+				add_ruler_trait = leader_trait_ruler_synthetic
+				remove_trait = leader_trait_general_cyborg
+				remove_ruler_trait = leader_trait_ruler_cyborg
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = leader_trait_governor_synthetic
+				add_ruler_trait = leader_trait_ruler_synthetic
+				remove_trait = leader_trait_governor_cyborg
+				remove_ruler_trait = leader_trait_ruler_cyborg
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = leader_trait_scientist_synthetic
+				add_ruler_trait = leader_trait_ruler_synthetic
+				remove_trait = leader_trait_scientist_cyborg
+				remove_ruler_trait = leader_trait_ruler_cyborg
+			}
+			if = {
+				limit = { leader_class = ruler }
+				add_trait = leader_trait_ruler_synthetic
+				remove_trait = leader_trait_ruler_cyborg
+			}
+		}
+		every_pool_leader = {
+			limit = {
+				species = { has_trait = trait_robotic_3 }
+				NOR = {
+					has_trait = leader_trait_admiral_synthetic
+					has_trait = leader_trait_general_synthetic
+					has_trait = leader_trait_governor_synthetic
+					has_trait = leader_trait_scientist_synthetic
+					has_trait = leader_trait_ruler_synthetic
+				}
+			}
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = leader_trait_admiral_synthetic
+				add_ruler_trait = leader_trait_ruler_synthetic
+				remove_trait = leader_trait_admiral_cyborg
+				remove_ruler_trait = leader_trait_ruler_cyborg
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = leader_trait_general_synthetic
+				add_ruler_trait = leader_trait_ruler_synthetic
+				remove_trait = leader_trait_general_cyborg
+				remove_ruler_trait = leader_trait_ruler_cyborg
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = leader_trait_governor_synthetic
+				add_ruler_trait = leader_trait_ruler_synthetic
+				remove_trait = leader_trait_governor_cyborg
+				remove_ruler_trait = leader_trait_ruler_cyborg
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = leader_trait_scientist_synthetic
+				add_ruler_trait = leader_trait_ruler_synthetic
+				remove_trait = leader_trait_scientist_cyborg
+				remove_ruler_trait = leader_trait_ruler_cyborg
+			}
+			if = {
+				limit = { leader_class = ruler }
+				add_trait = leader_trait_ruler_synthetic
+				remove_trait = leader_trait_ruler_cyborg
+			}
+		}
+		
+		every_country = {
+			limit = { 
+				is_ai = no 
+				NOT = { is_same_value = root }
+				has_communications = root
+			}
+			country_event = { id = utopia.2555 days = 5 }
+			country_event = { id = utopia.2556 days = 10 }
+		}
+		if = {
+			limit = {
+				any_country = {
+					AND = {
+						OR = {
+							is_country_type = fallen_empire
+							is_country_type = awakened_fallen_empire
+						}
+						has_ethic = ethic_fanatic_spiritualist
+					}
+				}
+			}
+			random_country = {
+				limit = {
+					OR = {
+						is_country_type = fallen_empire
+						is_country_type = awakened_fallen_empire
+					}
+					has_ethic = ethic_fanatic_spiritualist
+				}
+				country_event = { id = utopia.2557 days = 15 }
+			}
+			else = {
+				random_country = {
+					limit = {
+						is_country_type = default
+						has_ethic = ethic_fanatic_spiritualist
+						NOT = { is_same_value = root }
+					}
+					country_event = { id = utopia.2557 days = 15 }
+				}
+			}
+		}
+
+		ROOT = {
+			set_country_flag = synthetic_age
+		}
+	}
+	
+	option = {
+		name = "utopia.2551.a"
+		custom_tooltip = SYNTH_ASSIMILATION_CITIZENSHIP_ENABLED
+					remove_country_flag = extsynths_option_1
+					remove_country_flag = extsynths_option_2
+					remove_country_flag = extsynths_option_3
+					remove_country_flag = extsynths_option_4
+					remove_country_flag = extsynths_option_5
+					remove_country_flag = extsynths_option_6
+					remove_country_flag = extsynths_option_7
+					remove_country_flag = extsynths_option_8
+					remove_country_flag = extsynths_option_9
+					remove_country_flag = extsynths_option_10
+					remove_country_flag = extsynths_option_11
+					remove_country_flag = extsynths_option_12
+					remove_country_flag = extsynths_option_13
+					remove_country_flag = extsynths_option_14
+					remove_country_flag = extsynths_option_15
+					remove_country_flag = extsynths_option_16
+					remove_country_flag = extsynths_option_17
+					remove_country_flag = extsynths_option_18
+					remove_country_flag = extsynths_option_19
+					remove_country_flag = extsynths_option_20
+					remove_country_flag = extsynths_option_21
+					remove_country_flag = extsynths_option_22
+					remove_country_flag = extsynths_option_23
+					remove_country_flag = extsynths_option_24
+	}
+}

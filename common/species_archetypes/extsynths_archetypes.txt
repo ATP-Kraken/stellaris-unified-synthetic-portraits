@@ -1,0 +1,5 @@
+
+EXTSYNTHARCH = {
+	inherit_trait_points_from = MACHINE
+	inherit_traits_from = { MACHINE ROBOT }
+}
