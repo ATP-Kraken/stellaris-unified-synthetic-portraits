@@ -1,46 +1,52 @@
 EXTSYNTH_BIO = {
 	archetype = BIOLOGICAL 
+	randomized = no
 	NOT = { host_has_dlc = "Synthetic Dawn Story Pack" }
 	#possible = { authority = { OR = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_USE_MACHINE_INTELLIGENCE } } }
 	possible_secondary = { always = no text = SECONDARY_SPECIES_CLASS_INVALID }
 
 	portraits = {
-				"humrobot"
-				"humroid"
-				"humansynth"
-				"mammaliansynth"
-				"reptiliansynth"
-				"aviansynth"
-				"anthrobot"
-				"anthroid"
-				"arthropoidsynth"
-				"molluscoidsynth"
-				"fungoidsynth"
-				"plantoidsynth"
-				"holofrixigram"
-				"zeriphensynth"
-				"humaicon"
-	}
-	# These should not be used for randomly generated species
-	non_randomized_portraits = {
-				"humrobot"
-				"humroid"
-				"humansynth"
-				"mammaliansynth"
-				"reptiliansynth"
-				"aviansynth"
-				"anthrobot"
-				"anthroid"
-				"arthropoidsynth"
-				"molluscoidsynth"
-				"fungoidsynth"
-				"plantoidsynth"
-				"holofrixigram"
-				"zeriphensynth"
-				"humaicon"
-	}
 	
-
+				"humrobot"
+				"humroid"
+				"humansynth"
+				"mammaliansynth"
+				"reptiliansynth"
+				"aviansynth"
+				"anthrobot"
+				"anthroid"
+				"arthropoidsynth"
+				"molluscoidsynth"
+				"fungoidsynth"
+				"plantoidsynth"
+				"holofrixigram"
+				"zeriphensynth"
+				"humaicon"
+				"synthetic_robot_01"
+				"synthetic_robot_02"
+				"synthetic_robot_03"
+				"synthetic_robot_04"
+				"synthetic_robot_05"
+				"synthetic_robot_06"
+				"synthetic_robot_07"
+				"synthetic_robot_08"
+				"default_robot"
+	}	
+	custom_portraits = {
+		randomized = { host_has_dlc = "Synthetic Dawn Story Pack" }
+		playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
+		portraits = {
+			"sd_hum_robot"
+			"sd_mam_robot"
+			"sd_rep_robot"
+			"sd_avi_robot"
+			"sd_art_robot"
+			"sd_mol_robot"
+			"sd_fun_robot"
+			"sd_pla_robot"
+			"syntherminator"
+		}
+	}
 	graphical_culture = divsynths_01
 	move_pop_sound_effect = "robot_pops_move"
 
@@ -50,6 +56,7 @@ EXTSYNTH_BIO = {
 }
 EXTSYNTH_DLC = {
 	archetype = MACHINE
+	randomized = no
 	host_has_dlc = "Synthetic Dawn Story Pack"
 	possible = { authority = { OR = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_USE_MACHINE_INTELLIGENCE } } }
 	possible_secondary = { always = no text = SECONDARY_SPECIES_CLASS_INVALID }
@@ -70,6 +77,14 @@ EXTSYNTH_DLC = {
 				"holofrixigram"
 				"zeriphensynth"
 				"humaicon"
+				"synthetic_robot_01"
+				"synthetic_robot_02"
+				"synthetic_robot_03"
+				"synthetic_robot_04"
+				"synthetic_robot_05"
+				"synthetic_robot_06"
+				"synthetic_robot_07"
+				"synthetic_robot_08"
 				"syntherminator" 
 	}
 	
@@ -125,6 +140,7 @@ EXTSYNTH = {
 			"sd_mol_robot"
 			"sd_fun_robot"
 			"sd_pla_robot"
+			"syntherminator"
 		}
 	}
 
@@ -148,7 +164,14 @@ EXTSYNTH = {
 				"holofrixigram"
 				"zeriphensynth"
 				"humaicon"
-				"syntherminator"
+				"synthetic_robot_01"
+				"synthetic_robot_02"
+				"synthetic_robot_03"
+				"synthetic_robot_04"
+				"synthetic_robot_05"
+				"synthetic_robot_06"
+				"synthetic_robot_07"
+				"synthetic_robot_08"
 		}
 	}
 	
